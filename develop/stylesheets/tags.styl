@@ -1,0 +1,350 @@
+
+@keyframes spinLoading
+	50%
+		transform: rotateY(90deg)
+
+h1,h2,h3,h4,h5,h6
+	color: 'Neutral/Neutral 90'
+	margin: 0px
+	padding: 0px
+h1
+	Typography('Header/H1')
+h2
+	Typography('Header/H2')
+h3
+	Typography('Header/H3')
+h4
+	Typography('Header/H4')
+h5
+	Typography('Header/H5')
+h6
+	Typography('Header/H6')
+
+a
+	text-decoration: none
+	color: 'Primary/Primary 60 Main'
+	&[aria-disabled]
+		color: 'Neutral/Neutral 30'
+	&:hover:not([aria-disabled]),
+	&:focus:not([aria-disabled])
+		color: 'Primary/Primary 70'
+	&:active:not([aria-disabled]),
+	&.active:not([aria-disabled]),
+	&[aria-current]:not([aria-current="false"]):not([aria-disabled])
+		color: 'Primary/Primary 80'
+
+menu
+	margin: 0px
+	padding: 0px
+
+dl
+	display: grid
+	grid-template-columns: auto 1fr
+	gap: 4rem
+	&, & > dt, & > dd
+		margin: 0px
+		padding: 0px
+
+kbd, abbr
+	cursor: pointer
+	display: inline-grid
+	align-items: center
+	justify-content: center
+	position: relative
+	svg
+		grid-area: 1/1/2/2
+		width: 12rem
+		height: 12rem
+		pointer-events: none
+		transition: opacity 1s
+	& > :not(:first-child)
+		opacity: 0
+	&:hover *
+		fill: 'Primary/Primary 70' !important
+
+abbr
+	min-width: 12rem
+	min-height: 12rem
+	&:hover
+		color: 'Primary/Primary 70' !important
+
+ins
+	cursor: pointer
+	color: 'Primary/Primary 50'
+	&[aria-placeholder]:empty:before
+		content: attr(aria-placeholder)
+		display: inline-block
+		padding: 0px 1em
+		text-decoration: underline
+
+button
+	Typography('Button/Button 2')
+	box-sizing: border-box
+	border-radius: 2rem
+	border: 0px solid transparent
+	color: 'Special/Static White'
+	background-color: 'Primary/Primary 60 Main'
+	padding: 0px 13rem
+	display: inline-flex
+	align-items: center
+	flex-wrap: nowrap
+	text-wrap: nowrap
+	text-overflow: ellipsis
+	overflow: hidden
+	cursor: pointer
+	& > i
+		width: 20px
+		height: 20px
+		margin-left: -20px
+		margin-right: 2rem
+	& *[fill^='#']
+		fill: 'Special/Static White'
+	&:hover
+		background-color: 'Primary/Primary 70'
+	&:active
+		background-color: 'Primary/Primary 80'
+	&:disabled
+		background-color: 'Neutral/Neutral 10'
+		color: 'Neutral/Neutral 30'
+		& *[fill^='#']
+			fill: 'Neutral/Neutral 30'
+
+button[role="link"]
+	color: 'Primary/Primary 60 Main'
+	background-color: transparent
+	& *[fill^='#']
+		fill: currentColor
+	&:hover
+		color: 'Primary/Primary 70'
+	&:active
+		color: 'Primary/Primary 80'
+	&:disabled
+		color: 'Neutral/Neutral 10'
+		& *[fill^='#']
+			fill: 'Neutral/Neutral 30'
+
+dfn
+	color: 'Neutral/Neutral 30'
+dialog
+	border: 0px solid transparent
+	border-radius: 4rem
+	box-shadow: 'Shadow 16'
+	color: 'Neutral/Neutral 90'
+	z-index: 1000
+
+table
+	border-spacing: 0px
+	border-collapse: collapse
+	th
+		Typography('Subtitle/Subtitle 3')
+
+[open] > del, dl del, ins + del, ins del, summary del
+	cursor: pointer
+	display: inline-flex
+	border-radius: 50%
+	width: 12rem
+	height: 12rem
+	align-items: center
+	justify-content: center
+	text-decoration: none
+	&:before
+		content: '\2715'
+		font-size: smaller
+		transform: translate(.5px, .5px)
+		color: 'Neutral/Neutral 50'
+	&:hover
+		state: 'Opacity/Hover'
+	&:active
+		state: 'Opacity/Press'
+
+ins + del
+	float: right
+dl del, ins + del, ins del
+	margin-top: -2rem
+	&:before
+		transform: translateY(-.25rem)
+	&:hover:before
+		color: 'Error/Error 60 Main'
+		font-weight: 550
+
+[open] > del
+	position: absolute
+	right: 0em
+	top: 0em
+
+samp
+	height: 11rem
+	background-color: 'Neutral/Neutral 10'
+	display: inline-flex
+	align-items: center
+	padding: 0rem 6rem
+	border: 1px solid transparent
+	border-radius: 11rem
+	cursor: pointer
+	box-sizing: border-box
+	Typography('Body/Body 2 Long')
+	transition: color .6s, background-color .6s, border-color .6s
+	&.active
+		background-color: unset
+		border-color: 'Primary/Primary 60 Main'
+		color: 'Primary/Primary 60 Main'
+	&.active:hover
+		border-color: 'Primary/Primary 30'
+		background-color: 'Primary/Primary 30'
+
+
+fieldset
+	border: 1px solid 'Neutral/Neutral 10'
+	border-radius: 2rem
+	position: relative
+	& > legend
+		padding: 0px 1ex
+		Typography('Button/Button 2')
+		color: 'Neutral/Neutral 50'
+		& > aside
+			position: absolute
+			right: 1ex
+			top: .625em
+			padding: 0px 1ex
+			height: 0px
+			display: flex
+			align-items: center
+			gap: 4rem
+			& > kbd, & > abbr
+				background-color: 'Neutral/Neutral 10'
+				border-radius: 50%
+				min-width: 24px
+				height: 24px
+				cursor: pointer
+
+
+blockquote
+	position: relative
+	border: 1rem solid 'Primary/Primary 60 Main'
+	border-radius: 2rem
+	margin: 0px
+	padding: 6rem 6rem 6rem 24rem
+	&:before
+		content: ''
+		position: absolute
+		width: 12rem
+		height: 12rem
+		left: 6rem
+		top: 6rem
+		// mask: url('~@admiral-ds/icons/build/service/InfoSolid.svg') no-repeat 100% 100%
+		mask-size: cover
+		background-color: 'Primary/Primary 60 Main'
+
+em
+	color: 'Warning/Warning 50 Main'
+	&:before
+		content: ''
+		display: inline-block
+		width: 8rem
+		height: 8rem
+		margin-right: 1ex
+		vertical-align: bottom
+		// mask: url('~@admiral-ds/icons/build/service/ErrorTriangleSolid.svg') no-repeat 100% 100%
+		mask-size: cover
+		background-color: 'Warning/Warning 50 Main'
+
+cite
+	color: 'Error/Error 60 Main'
+	&:before
+		content: ''
+		display: inline-block
+		width: 8rem
+		height: 8rem
+		margin-right: 1ex
+		vertical-align: bottom
+		// mask: url('~@admiral-ds/icons/build/service/CloseCircleSolid.svg') no-repeat 100% 100%
+		mask-size: cover
+		background-color: 'Error/Error 60 Main'
+
+
+details
+	position: relative
+	summary[aria-placeholder][aria-description]
+		& > span
+				display inline-block
+				padding: 0px 1ex
+				white-space nowrap
+				text-overflow: ellipsis
+				overflow: hidden
+				vertical-align: bottom
+				&::selection
+					box-shadow: none
+					outline: 0px solid transparent
+		&::marker
+			content: attr(aria-description)
+			display: inline-block
+			overflow: hidden
+			text-overflow: ellipsis
+			white-space: nowrap
+		&:before
+			content: '\005e'
+			display: inline-flex
+			align-items: center
+			justify-content: center
+			float: right
+			transform: scale(-1)
+			transition: transform .3s
+		&:empty:after
+			content: attr(aria-placeholder)
+			display: inline-block
+			font-style: italic
+			color: 'Neutral/Neutral 30'
+			overflow: hidden
+			text-overflow: ellipsis
+			white-space: nowrap
+			vertical-align: bottom
+			padding: 0px 1ex
+		& + ul
+			background-color: 'Neutral/Neutral 00'
+			padding: 0px
+			margin: 0px
+			list-style: none
+			padding: 1em 0px
+			max-height: 180px
+			overflow: auto scroll
+			position: absolute
+			width: stretch
+			z-index: 1
+			border: 0px solid transparent
+			border-radius: 4rem
+			box-shadow: 'Shadow 16'
+			margin-top: 1ex
+			& > li
+				padding: 1ex 1em
+				box-sizing: border-box
+				background-color: transparent
+				cursor: pointer
+				&:hover:not(.active)
+					background-color: 'Opacity/Hover'
+				&:active:not(.active)
+					background-color: 'Opacity/Press'
+				&.active
+					background-color: 'Primary/Primary 10'
+				&::selection
+					box-shadow: none
+					outline: 0px solid transparent
+
+	&[open] > summary[aria-placeholder][aria-description]:before
+			transform: scale(1)
+
+button, ruby
+	min-width: 14rem
+	&.loading
+		position: relative
+		& > :first-child
+			opacity: 0
+		&:before
+			content: '\2744'
+			display inline-block
+			animation: spinLoading 3s linear infinite
+			font-size: 12rem
+			position: absolute
+			left: 3rem
+
+
+@import './label'

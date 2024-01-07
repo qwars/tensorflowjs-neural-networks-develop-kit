@@ -1,0 +1,193 @@
+
+TypographyState = {
+	'Main/XXL': {
+		font-weight: 550
+		font-size: 42px
+		line-height: 52px
+	},
+	'Main/XL': {
+		font-weight: 550
+		font-size: 36px
+		line-height: 44px
+	}
+	'Main/L': {
+		font-weight: 500
+		font-size: 32px
+		line-height: 40px
+	},
+	'Main/M': {
+		font-weight: 550
+		font-size: 28px
+		line-height: 36px
+	},
+	'Main/S': {
+		font-weight: 550
+		font-size: 20px
+		line-height: 28px
+	},
+	'Main/XS-bold': {
+		font-weight: 550
+		font-size: 18px
+		line-height: 24px
+	},
+	'Main/XS': {
+		font-weight: normal
+		font-size: 18px
+		line-height: 24px
+	},
+	'Additional/L-bold': {
+		font-weight: 550
+		font-size: 16px
+		line-height: 24px
+	},
+	'Additional/L': {
+		font-weight: normal
+		font-size: 16px
+		line-height: 24px
+	},
+	'Additional/M': {
+		font-weight: normal
+		font-size: 16px
+		line-height: 20px
+	},
+	'Additional/S': {
+		font-weight: normal
+		font-size: 14px
+		line-height: 20px
+	},
+	'Additional/S-bold': {
+		font-weight: 500
+		font-size: 14px
+		line-height: 20px
+	},
+	'Additional/XS': {
+		font-weight: normal
+		font-size: 14px
+		line-height: 16px
+	},
+	'Button/M': {
+		font-weight: 500
+		font-size: 16px
+		line-height: 24px
+	},
+	'Button/S': {
+		font-weight: 500
+		font-size: 14px
+		line-height: 20px
+	},
+	'Caption/XS': {
+		font-weight: normal
+		font-size: 12px
+		line-height: 16px
+	},
+	'Header/HL1': {
+		font-weight: 550
+		font-size: 72px
+		line-height: 80px
+	},
+	'Header/HL2': {
+		font-weight: 550
+		font-size: 56px
+		line-height: 64px
+	},
+	'Header/HL3': {
+		font-weight: 550
+		font-size: 48px
+		line-height: 56px
+	},
+	'Header/H1': {
+		font-weight: 550
+		font-size: 40px
+		line-height: 48px
+	},
+	'Header/H2': {
+		font-weight: 550
+		font-size: 34px
+		line-height: 40px
+	},
+	'Header/H3': {
+		font-weight: 550
+		font-size: 28px
+		line-height: 36px
+	},
+	'Header/H4': {
+		font-weight: 550
+		font-size: 24px
+		line-height: 32px
+	},
+	'Header/H5': {
+		font-weight: 550
+		font-size: 20px
+		line-height: 28px
+	},
+	'Header/H6': {
+		font-weight: 550
+		font-size: 18px
+		line-height: 24px
+	},
+	'Subtitle/Subtitle 1': {
+		font-weight: 400
+		font-size: 18px
+		line-height: 24px
+	},
+	'Subtitle/Subtitle 2': {
+		font-weight: 550
+		font-size: 16px
+		line-height: 24px
+	},
+	'Subtitle/Subtitle 3': {
+		font-weight: 550
+		font-size: 14px
+		line-height: 20px
+	},
+	'Body/Body 1 Long': {
+		font-weight: 400
+		font-size: 16px
+		line-height: 24px
+	},
+	'Body/Body 1 Short': {
+		font-weight: 400
+		font-size: 16px
+		line-height: 20px
+	},
+	'Body/Body 2 Long': {
+		font-weight: 400
+		font-size: 14px
+		line-height: 20px
+	},
+	'Body/Body 2 Short': {
+		font-weight: 400
+		font-size: 14px
+		line-height: 16px
+	},
+	'Button/Button 1': {
+		font-weight: 500
+		font-size: 16px
+		line-height: 24px
+	},
+	'Button/Button 2': {
+		font-weight: 500
+		font-size: 14px
+		line-height: 20px
+	},
+	'Caption/Caption 1': {
+		font-weight: 400
+		font-size: 12px
+		line-height: 16px
+	},
+	'Caption/Caption 2': {
+		font-weight: 400
+		font-size: 10px
+		line-height: 12px
+	}
+}
+
+
+Typography( key )
+	font-family: -apple-system, "Segoe UI", system-ui, Roboto, "Noto Sans", "Helvetica Neue", sans-serfi
+	font-style: normal;
+	font-weight: TypographyState[key]['font-weight']
+	font-size: TypographyState[key]['font-size']
+	line-height: TypographyState[key]['line-height']
+	font-feature-settings: 'tnum' on, 'lnum' on;
+	text-rendering: geometricPrecision;

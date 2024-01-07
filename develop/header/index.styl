@@ -1,0 +1,19 @@
+@import '../stylesheets'
+
+header
+	display: flex
+	gap: 8rem
+	height: 20rem
+	align-items: center
+	nav
+		display: flex
+		gap: 4rem
+		& > a
+			color: 'Neutral/Neutral 50'
+			display: flex
+			align-items: center
+			&.active, &[aria-current="true"]
+				text-decoration: underline
+				text-underline-offset: 4rem
+	& > a > svg
+		width: 60%

@@ -1,0 +1,93 @@
+@import 'stylesheets'
+
+@keyframes spinLoading
+	50%
+		transform: rotateY(90deg)
+
+@keyframes hideOpacity
+	0%
+		opacity: 1
+	100%
+		opacity: 0
+
+html
+	min-height: 100vh
+	margin: 0px
+	padding: 0px
+	height: 100%
+	font-size: 2px
+
+body
+	margin: 0px
+	padding: 0px
+	-webkit-font-smoothing: antialiased
+	display: grid
+	grid-template-rows: auto 1fr auto
+	min-height: 100vh
+	max-height: 100vh
+	height: 100vh
+	min-width: 1024px
+	gap: 8rem
+	overflow: auto hidden
+	color: 'Neutral/Neutral 90'
+	Typography( 'Body/Body 1 Long' )
+	& > *
+		place-self: stretch
+	::selection
+		// box-shadow: none
+		// outline: 0px solid transparent
+	:not(dialog):focus
+		box-shadow: none
+		outline: 0px solid transparent
+	& > output
+		position: fixed
+		left: 0px
+		right: 0px
+		top: 0px
+		bottom: 0px
+		margin: auto
+		z-index: -1
+		transition: z-index 0s .7s
+		&:before
+			opacity: 1
+			transition: opacity .3s 5s
+		.SnowCanvas
+			opacity: 0
+		&.show
+			z-index: 1000
+			transition: z-index 0s
+
+		&.loading:not(label)
+			display: inline-flex
+			align-items: center
+			justify-content: center
+			line-height: 0px
+			position: absolute
+			top: 0px
+			bottom: 0px
+			left: 1rem
+			margin: auto
+			position: absolute
+			top: 0px
+			bottom: 0px
+			left: 0px
+			margin: auto
+			backdrop-filter: blur(1px)
+			z-index: 1000
+			&:not(span)
+				right: 0px
+				font-size: 20rem
+			&:before
+				content: '\2744'
+				color: 'Neutral/Neutral 30'
+				animation: spinLoading 3s linear infinite, hideOpacity .3s 15s linear both
+
+			.SnowCanvas
+				backdrop-filter: blur(1px)
+				position: fixed
+				top: 0px
+				bottom: 0px
+				right: 0px
+				left: 0px
+				opacity: 0.3
+				transition: opacity 1s 15s

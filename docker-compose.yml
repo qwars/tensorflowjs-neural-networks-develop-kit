@@ -1,0 +1,28 @@
+version: '3.3'
+services:
+  jupyter-ui:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: tensorflow
+    container_name: jupyter-ui
+    ports:
+      - 8888:8888
+    volumes:
+      - ./develop:/usr/src/application/develop:rw
+    command: "bash -c 'source /etc/bash.bashrc && jupyter notebook --notebook-dir=/usr/src/application/ --ip 0.0.0.0 --no-browser --allow-root'"
+  develop-ui:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: tensorflow
+    container_name: develop-ui
+    environment:
+      - BASE_PATH
+    ports:
+      - 9090:9090
+    volumes:
+      - ./package.json:/usr/src/application/package.json:rw
+      - ./develop:/usr/src/application/develop:rw
+      - ./webpack.config.js:/usr/src/application/webpack.config.js
+    command: "yarn start --host 0.0.0.0"

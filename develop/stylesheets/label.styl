@@ -1,0 +1,183 @@
+[contenteditable="true"][aria-placeholder]:empty:before
+	content: attr(aria-placeholder)
+	color: 'Neutral/Neutral 50'
+	font-style: italic
+
+
+label
+	display: grid
+	grid-template-columns: auto 1fr auto
+	align-items: center
+	justify-content: stretch
+	position: relative
+	&.loading
+		position: relative
+		& > *
+			opacity: 0.3
+		&:before
+			content: '\2744'
+			color: 'Neutral/Neutral 50'
+			display inline-block
+			animation: spinLoading 3s linear infinite
+			font-size: 12rem
+			position: absolute
+			width: 9rem
+			height: 12rem
+			top: 0px
+			right: 0rem
+			bottom: 0px
+			left: 0rem
+			margin: auto
+	& :focus
+		box-shadow: none !important
+	& > i
+		width: 24px
+		height: 24px
+		&:empty
+			visibility: none
+			width: 0px
+			& + input, & + input:focus
+				padding-left: 4rem
+		& + span
+			padding-left: 1ex
+	& > sub
+		position: absolute
+		bottom: -.7em
+		right: 1em
+		padding: 0px 1ex
+		color: 'Neutral/Neutral 40'
+	& > input, & > input:focus
+		color: 'Neutral/Neutral 90'
+		Typography('Body/Body 2 Long')
+		background: transparent
+		text-overflow: ellipsis
+		box-sizing: border-box
+		border-radius: 2rem
+		border: solid 1px 'Neutral/Neutral 20'
+		height: 16rem
+		grid-area: 1/2/2/3
+		width: unset
+		margin: 0px
+		padding: 0px 4rem
+		& ~ input, & > input:focus ~ input
+			grid-area: 1/3/2/4
+			margin-left: 1ex
+			align-self: end
+			&:focus
+				margin-left: 1ex
+				grid-area: 1/3/2/4
+		&:not([type="checkbox"]):has( ~ legend )
+			margin-top: 10rem
+			& ~ legend
+				position: absolute
+				top: 0rem
+				left: 0px
+				right: 0px
+				margin: auto
+		&:has( + del + kbd ), &:has( + kbd )
+			border-radius: 2rem 0px 0px 2rem
+			border-right: 0px solid transparent
+			padding: 0rem 20rem 0rem 10rem
+			align-self: end
+			& + del
+				opacity: 0
+				text-decoration: none
+				margin-right: -10rem
+				transition: opacity .6s
+				cursor: pointer
+				&:before
+					color: 'Neutral/Neutral 50'
+				&:hover:before
+					color: 'Warning/Warning 60'
+			& + kbd, & + del + kbd
+				height: 16rem
+				min-width: 16rem
+				box-sizing: border-box
+				border-radius: 0px 2rem 2rem 0px
+				border: 1px solid 'Neutral/Neutral 20'
+				border-left-width: 0px
+				align-self: end
+				grid-area: 1/3/2/4
+			&:not(:placeholder-shown) + del
+				opacity: 1
+				&:before
+					content: '\2715'
+					font-size: smaller
+					display: inline-block
+					transform: translate(4rem, .5px)
+
+		&:focus:not(:invalid):not(:placeholder-shown) + kbd > :first-child
+			opacity: 0
+		&:focus:not(:invalid):not(:placeholder-shown) + kbd > :not(:first-child)
+			opacity: 1
+		&[type=checkbox]
+			width: 8rem
+			height: 8rem
+			margin: 2.5rem 0px
+			justify-self: end
+			cursor: pointer
+			& ~ *
+				cursor: pointer
+			&[role="switch"]
+				visibility: hidden
+				& + *
+					cursor: pointer
+					padding-right: 20rem
+					&:after
+						content: ''
+						background-color: 'Neutral/Neutral 00'
+						width: 7rem
+						height: 7rem
+						border-radius: 50%
+						display: inline-block
+						position: absolute
+						right: 6.5rem
+						top: 3.5rem
+						transition: right .3s
+					&:before
+						content: ''
+						background-color: 'Neutral/Neutral 30'
+						width: 14rem
+						height: 8rem
+						border-radius: 8rem
+						display: inline-block
+						position: absolute
+						right: 0px
+						top: 3rem
+						transition: right .3s, background-color .3s
+				&:checked + *:after
+					right: .5rem
+				&:checked + *:before
+					background-color: 'Special/Dark Static Success 50'
+			& ~ nav
+				grid-area: 2/1/3/3
+				display: flex
+				gap: 4rem
+				&:before
+					content: ''
+					display: inline-block
+					width: 12rem
+					height: 9rem
+					// mask: url('~@admiral-ds/icons/build/system/BackOutline.svg') no-repeat 100% 100%
+					mask-size: cover
+					background-color: 'Neutral/Neutral 30'
+					transform: rotate(-180deg) translate(-3rem, 2rem)
+				& > span
+					display: inline-flex
+					align-items: center
+					justify-content: center
+					background-color: 'Neutral/Neutral 00'
+					height: 8rem
+					min-width: 8rem
+					border: 1px solid transparent
+					border-radius: 8rem
+					font-size: smaller
+					box-sizing: border-box
+					&:hover
+						border-color: 'Primary/Primary 60 Main'
+					&.active
+						background-color: 'Primary/Primary 60 Main'
+						color: 'Neutral/Neutral 00'
+
+  	&::placeholder
+		color: 'Neutral/Neutral 50'
